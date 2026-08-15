@@ -123,23 +123,11 @@ export default function Hero() {
               />
 
               {/* Portrait container */}
-              <div className="relative w-80 h-96 md:w-96 md:h-[500px] flex items-center justify-center">
-                <img 
-                  src="https://mhk-verma.github.io/portfolio/images/hero-portrait.png" 
-                  alt="Mahak Verma" 
-                  style={{ width: '250px', height: 'auto' }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `
-                      <div class="w-full h-full bg-gradient-to-br from-[#8B0000]/20 to-black flex items-center justify-center rounded-2xl border-2 border-[#8B0000]/30">
-                        <div class="text-center">
-                          <div class="text-8xl font-bold text-gradient mb-4">MV</div>
-                          <p class="text-gray-400">Mahak Verma</p>
-                        </div>
-                      </div>
-                    `;
-                  }}
-                />
+              <div className="relative w-80 h-96 md:w-96 md:h-[500px] bg-gradient-to-br from-[#8B0000]/20 to-black flex items-center justify-center rounded-2xl border-2 border-[#8B0000]/30">
+                <div className="text-center">
+                  <div className="text-8xl md:text-9xl font-bold text-gradient mb-4">MV</div>
+                  <p className="text-gray-400 text-lg">Mahak Verma</p>
+                </div>
               </div>
 
               {/* Decorative elements */}
