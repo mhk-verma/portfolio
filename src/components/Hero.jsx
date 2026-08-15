@@ -124,16 +124,10 @@ export default function Hero() {
 
               {/* Portrait container */}
               <div className="relative w-80 h-96 md:w-96 md:h-[500px] flex items-center justify-center">
-                <img
-                  src="/images/hero-portrait.png"
-                  alt="Mahak Verma"
-                  className="universal-sticker"
-                  style={{
-                    maxWidth: '300px',
-                    width: '100%',
-                    height: 'auto',
-                    display: 'inline-block'
-                  }}
+                <img 
+                  src="/images/hero-portrait.png" 
+                  alt="Mahak Verma" 
+                  style={{ width: '250px', height: 'auto' }}
                 />
               </div>
 
