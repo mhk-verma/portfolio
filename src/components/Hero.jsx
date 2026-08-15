@@ -127,8 +127,13 @@ export default function Hero() {
                 <img
                   src="/images/hero-portrait.png"
                   alt="Mahak Verma"
-                  className="max-w-full max-h-full object-contain drop-shadow-2xl"
-                  style={{ width: 'auto', height: 'auto' }}
+                  className="universal-sticker"
+                  style={{
+                    maxWidth: '300px',
+                    width: '100%',
+                    height: 'auto',
+                    display: 'inline-block'
+                  }}
                 />
               </div>
 
