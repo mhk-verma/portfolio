@@ -128,17 +128,6 @@ export default function Hero() {
                   src="/images/hero-portrait.png"
                   alt="Mahak Verma"
                   className="w-full h-full object-contain drop-shadow-2xl"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `
-                      <div class="w-full h-full bg-gradient-to-br from-[#8B0000]/20 to-black flex items-center justify-center rounded-2xl border-2 border-[#8B0000]/30">
-                        <div class="text-center">
-                          <div class="text-6xl font-bold text-gradient mb-2">MV</div>
-                          <p class="text-gray-400">Add your photo</p>
-                        </div>
-                      </div>
-                    `;
-                  }}
                 />
               </div>
 
