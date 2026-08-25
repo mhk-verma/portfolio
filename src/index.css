@@ -2,12 +2,12 @@
 
 @layer base {
   :root {
-    --color-bg-primary: #0a0a0a;
-    --color-bg-secondary: #111111;
-    --color-accent: #8B0000;
-    --color-accent-light: #A52A2A;
-    --color-accent-dark: #5C0000;
-    --color-text-primary: #f5f5f5;
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #0a0a0a;
+    --color-accent: #00ffff;
+    --color-accent-light: #00cccc;
+    --color-accent-dark: #009999;
+    --color-text-primary: #ffffff;
     --color-text-secondary: #a0a0a0;
     --color-text-muted: #666666;
   }
@@ -45,24 +45,24 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent-light) 100%);
+    background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
   }
 
   .glow {
-    box-shadow: 0 0 40px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
   }
 
   .glow-text {
-    text-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
   }
 }
 
