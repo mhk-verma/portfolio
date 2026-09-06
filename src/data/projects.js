@@ -21,6 +21,16 @@ export const projectsData = [
   },
   {
     id: 3,
+    name: "Fruit Ninja",
+    description: "A fun and interactive fruit slicing game built with TypeScript, featuring smooth animations and engaging gameplay mechanics.",
+    technologies: ["TypeScript", "Canvas API", "Game Engine", "Vite"],
+    github: "https://github.com/mhk-verma/Fruit-Ninja",
+    live: "https://mhk-verma.github.io/Fruit-Ninja/",
+    featured: true,
+    image: "/images/projects/fruit-ninja.jpg"
+  },
+  {
+    id: 4,
     name: "House of Mehak",
     description: "A modern restaurant website featuring elegant design, menu showcase, and online ordering capabilities.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
@@ -30,7 +40,7 @@ export const projectsData = [
     image: "/images/projects/house-of-mehak.jpg"
   },
   {
-    id: 4,
+    id: 5,
     name: "Birthday Surprise",
     description: "A creative web application designed to celebrate special occasions with interactive features and personalized experiences.",
     technologies: ["React", "JavaScript", "CSS", "Vite"],
@@ -40,7 +50,7 @@ export const projectsData = [
     image: "/images/projects/birthday-surprise.jpg"
   },
   {
-    id: 5,
+    id: 6,
     name: "Portfolio Website",
     description: "A premium personal portfolio website showcasing projects and skills with modern design and smooth animations.",
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
