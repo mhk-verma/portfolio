@@ -5,7 +5,7 @@ export const projectsData = [
     description: "A professional resume builder application with modern UI and easy-to-use interface for creating stunning resumes.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     github: "https://github.com/mhk-verma/resume",
-    live: "https://resume-gyah-henna.vercel.app",
+    live: "https://mhk-verma.github.io/resume/",
     featured: true,
     image: "/images/projects/resume.jpg"
   },
