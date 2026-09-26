@@ -1,3 +1,10 @@
+import resumeImage from '../assets/images/projects/resume.png';
+import aiAirWritingImage from '../assets/images/projects/ai-air-writing.png';
+import fruitNinjaImage from '../assets/images/projects/fruit-ninja.png';
+import houseOfMehakImage from '../assets/images/projects/house-of-mehak.png';
+import birthdaySurpriseImage from '../assets/images/projects/birthday-surprise.png';
+import portfolioImage from '../assets/images/projects/portfolio.png';
+
 export const projectsData = [
   {
     id: 1,
@@ -7,7 +14,7 @@ export const projectsData = [
     github: "https://github.com/mhk-verma/resume",
     live: "https://mhk-verma.github.io/resume/",
     featured: true,
-    image: "/images/projects/resume.jpg"
+    image: resumeImage
   },
   {
     id: 2,
@@ -17,7 +24,7 @@ export const projectsData = [
     github: "https://github.com/mhk-verma/ai-air-writing",
     live: "https://mhk-verma.github.io/ai-air-writing",
     featured: true,
-    image: "/images/projects/ai-air-writing.jpg"
+    image: aiAirWritingImage
   },
   {
     id: 3,
@@ -27,7 +34,7 @@ export const projectsData = [
     github: "https://github.com/mhk-verma/Fruit-Ninja",
     live: "https://mhk-verma.github.io/Fruit-Ninja/",
     featured: true,
-    image: "/images/projects/fruit-ninja.jpg"
+    image: fruitNinjaImage
   },
   {
     id: 4,
@@ -37,7 +44,7 @@ export const projectsData = [
     github: "https://github.com/mhk-verma/house-of-mehak",
     live: "https://house-of-mehak-mhk9.vercel.app",
     featured: true,
-    image: "/images/projects/house-of-mehak.jpg"
+    image: houseOfMehakImage
   },
   {
     id: 5,
@@ -47,7 +54,7 @@ export const projectsData = [
     github: "https://github.com/mhk-verma/birthday-surprise",
     live: "https://mhk-verma.github.io/birthday-surprise/",
     featured: true,
-    image: "/images/projects/birthday-surprise.jpg"
+    image: birthdaySurpriseImage
   },
   {
     id: 6,
@@ -57,6 +64,6 @@ export const projectsData = [
     github: "https://github.com/mhk-verma/portfolio",
     live: "https://mhk-verma.github.io/portfolio/",
     featured: true,
-    image: "/images/projects/portfolio.jpg"
+    image: portfolioImage
   }
 ];
