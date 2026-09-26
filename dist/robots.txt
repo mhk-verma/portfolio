@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mhk-verma.github.io/portfolio/sitemap.xml
