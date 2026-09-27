@@ -3,7 +3,6 @@ import aiAirWritingImage from '../assets/images/projects/ai-air-writing.png';
 import fruitNinjaImage from '../assets/images/projects/fruit-ninja.png';
 import houseOfMehakImage from '../assets/images/projects/house-of-mehak.png';
 import birthdaySurpriseImage from '../assets/images/projects/birthday-surprise.png';
-import portfolioImage from '../assets/images/projects/portfolio.png';
 
 export const projectsData = [
   {
@@ -55,15 +54,5 @@ export const projectsData = [
     live: "https://mhk-verma.github.io/birthday-surprise/",
     featured: true,
     image: birthdaySurpriseImage
-  },
-  {
-    id: 6,
-    name: "Portfolio Website",
-    description: "A premium personal portfolio website showcasing projects and skills with modern design and smooth animations.",
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    github: "https://github.com/mhk-verma/portfolio",
-    live: "https://mhk-verma.github.io/portfolio/",
-    featured: false,
-    image: portfolioImage
   }
 ];
