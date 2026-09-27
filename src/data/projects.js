@@ -63,7 +63,7 @@ export const projectsData = [
     technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
     github: "https://github.com/mhk-verma/portfolio",
     live: "https://mhk-verma.github.io/portfolio/",
-    featured: true,
+    featured: false,
     image: portfolioImage
   }
 ];
