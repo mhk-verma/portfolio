@@ -15,10 +15,12 @@
 
   * {
     scroll-behavior: smooth;
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   body {
@@ -27,6 +29,21 @@
     color: var(--color-text-primary);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Mobile-first responsive typography */
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 13px;
+    }
   }
 
   /* Enhanced custom scrollbar */
@@ -171,5 +188,51 @@
     background: white;
     backdrop-filter: none;
     border: 1px solid #ccc;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Disable heavy animations on mobile for performance */
+  .glass {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Simplified shadows on mobile */
+  .glow,
+  .glow-hover:hover {
+    box-shadow: none;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch devices */
+  .group:hover .opacity-0 {
+    opacity: 0;
+  }
+  
+  /* Ensure tap targets are large enough */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for retina displays */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Dark mode system preference */
+@media (prefers-color-scheme: dark) {
+  /* Already using dark mode, but ensure consistency */
+  body {
+    background: var(--color-bg-primary);
   }
 }

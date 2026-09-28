@@ -1,15 +1,24 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Github, ExternalLink, ArrowRight, Code2, Star, Zap } from 'lucide-react';
 import { projectsData } from '../data/projects';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-// 3D Card with tilt effect
+// 3D Card with tilt effect - disabled on mobile for performance
 function ProjectCard3D({ project, index, isFeatured = false }) {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleMouseMove = (e) => {
+    if (isMobile) return; // Disable 3D effects on mobile
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -42,7 +51,7 @@ function ProjectCard3D({ project, index, isFeatured = false }) {
         transition={{ delay: index * 0.2 }}
         className="group"
       >
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
           <motion.div
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -121,7 +130,7 @@ function ProjectCard3D({ project, index, isFeatured = false }) {
             transition={{ duration: 0.3 }}
           >
             <motion.h3 
-              className="text-3xl font-bold text-gradient"
+              className="text-2xl md:text-3xl font-bold text-gradient"
               animate={{ 
                 textShadow: isHovered ? '0 0 20px rgba(139,0,0,0.5)' : 'none'
               }}
@@ -182,7 +191,7 @@ function ProjectCard3D({ project, index, isFeatured = false }) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ delay: index * 0.1, type: 'spring', stiffness: 300, damping: 20 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
@@ -191,12 +200,11 @@ function ProjectCard3D({ project, index, isFeatured = false }) {
         perspective: 1000
       }}
       animate={{
-        rotateX,
-        rotateY,
+        rotateX: !isMobile ? rotateX : 0,
+        rotateY: !isMobile ? rotateY : 0,
         y: isHovered ? -10 : 0
       }}
-      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="glass p-6 rounded-2xl group cursor-pointer"
+      className="glass p-4 md:p-6 rounded-2xl group cursor-pointer"
     >
       <motion.div 
         className="aspect-video rounded-xl bg-gradient-to-br from-[#CE4DDB]/20 to-black mb-4 flex items-center justify-center overflow-hidden relative"
@@ -280,18 +288,20 @@ export default function Projects() {
   const otherProjects = projectsData.filter(p => !p.featured);
 
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Background effects */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute top-0 right-0 w-96 h-96 bg-[#CE4DDB]/10 rounded-full blur-3xl"
-      />
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute bottom-0 left-0 w-80 h-80 bg-[#A59ADB]/10 rounded-full blur-3xl"
-      />
+    <section id="projects" className="py-16 md:py-32 relative overflow-visible min-h-screen">
+      {/* Background effects - desktop only for performance */}
+      <div className="hidden md:block">
+        <motion.div 
+          style={{ y: y1 }}
+          className="absolute top-0 right-0 w-96 h-96 bg-[#CE4DDB]/10 rounded-full blur-3xl"
+        />
+        <motion.div 
+          style={{ y: y2 }}
+          className="absolute bottom-0 left-0 w-80 h-80 bg-[#A59ADB]/10 rounded-full blur-3xl"
+        />
+      </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -343,7 +353,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl font-bold mb-8 text-gradient flex items-center gap-3"
+                className="text-2xl md:text-3xl font-bold mb-8 text-gradient flex items-center gap-3"
               >
                 <Zap size={28} className="text-[#A59ADB]" />
                 Other Projects

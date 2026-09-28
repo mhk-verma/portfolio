@@ -163,18 +163,20 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-16 md:py-32 relative overflow-visible min-h-screen">
       {/* Background effects */}
-      <motion.div 
-        style={{ y: y1 }}
-        className="absolute top-0 right-0 w-96 h-96 bg-[#CE4DDB]/10 rounded-full blur-3xl"
-      />
-      <motion.div 
-        style={{ y: y2 }}
-        className="absolute bottom-0 left-0 w-80 h-80 bg-[#A59ADB]/10 rounded-full blur-3xl"
-      />
+      <div className="hidden md:block">
+        <motion.div 
+          style={{ y: y1 }}
+          className="absolute top-0 right-0 w-96 h-96 bg-[#CE4DDB]/10 rounded-full blur-3xl"
+        />
+        <motion.div 
+          style={{ y: y2 }}
+          className="absolute bottom-0 left-0 w-80 h-80 bg-[#A59ADB]/10 rounded-full blur-3xl"
+        />
+      </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +209,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
             {/* Left side - Bio and focus */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}

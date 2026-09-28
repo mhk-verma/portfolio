@@ -137,51 +137,59 @@ export default function Hero() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section className="min-h-screen relative overflow-hidden flex items-center">
+    <section className="min-h-screen relative overflow-hidden flex items-center px-4 md:px-6">
       {/* Enhanced background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1A1A1A] to-[#2E2D2D]" />
       
-      {/* Multiple animated gradient layers */}
-      <motion.div 
-        style={{ y: y1, opacity }}
-        className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#CE4DDB]/30 to-transparent"
-      />
-      <motion.div 
-        style={{ y: y2, opacity }}
-        className="absolute left-0 bottom-0 w-1/3 h-1/2 bg-gradient-to-r from-[#A59ADB]/20 to-transparent"
-      />
+      {/* Background effects - desktop only for mobile performance */}
+      <div className="hidden md:block">
+        <motion.div 
+          style={{ y: y1, opacity }}
+          className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-[#CE4DDB]/30 to-transparent"
+        />
+        <motion.div 
+          style={{ y: y2, opacity }}
+          className="absolute left-0 bottom-0 w-1/3 h-1/2 bg-gradient-to-r from-[#A59ADB]/20 to-transparent"
+        />
+      </div>
       
-      {/* Particle effects */}
-      <Particles />
+      {/* Particle effects - desktop only for performance */}
+      <div className="hidden md:block">
+        <Particles />
+      </div>
       
-      {/* Animated floating elements */}
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2],
-          rotate: [0, 180, 360]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#CE4DDB]/20 rounded-full blur-3xl"
-      />
+      {/* Animated floating elements - desktop only */}
+      <div className="hidden md:block">
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [0, 180, 360]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#CE4DDB]/20 rounded-full blur-3xl"
+        />
+      </div>
       
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3],
-          rotate: [360, 180, 0]
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#A59ADB]/15 rounded-full blur-3xl"
-      />
+      <div className="hidden md:block">
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3],
+            rotate: [360, 180, 0]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-[#A59ADB]/15 rounded-full blur-3xl"
+        />
+      </div>
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-5">
@@ -196,7 +204,7 @@ export default function Hero() {
 
       <motion.div 
         style={{ opacity }}
-        className="container mx-auto px-6 py-20 relative z-10"
+        className="container mx-auto px-4 md:px-6 py-16 md:py-20 relative z-10"
       >
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Enhanced Text */}

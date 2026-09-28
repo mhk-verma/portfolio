@@ -91,7 +91,7 @@ export default function Navigation() {
         }`}
       >
         <motion.div
-          className={`glass rounded-full px-8 py-4 flex items-center gap-8 transition-all duration-300 ${
+          className={`glass rounded-full px-4 md:px-8 py-3 md:py-4 flex items-center gap-4 md:gap-8 transition-all duration-300 ${
             scrolled ? 'bg-black/80 backdrop-blur-xl border-[#CE4DDB]/30' : ''
           }`}
           whileHover={{ scale: 1.02 }}
@@ -99,13 +99,13 @@ export default function Navigation() {
         >
           <motion.a 
             href="#" 
-            className="text-xl font-bold text-gradient flex items-center gap-2"
+            className="text-lg md:text-xl font-bold text-gradient flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
-            <Code2 size={20} className="text-[#A59ADB]" />
-            mhk codes
+            <Code2 size={18} className="text-[#A59ADB] md:size-20" />
+            <span className="hidden sm:inline">mhk codes</span>
           </motion.a>
-          <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4 md:gap-6">
             {navItems.map((item) => (
               <MagneticButton
                 key={item.name}
@@ -113,7 +113,7 @@ export default function Navigation() {
               >
                 <a
                   href={item.href}
-                  className={`text-sm font-medium transition-colors relative px-3 py-1 rounded-full ${
+                  className={`text-xs md:text-sm font-medium transition-colors relative px-2 md:px-3 py-1 rounded-full ${
                     activeSection === item.href.substring(1)
                       ? 'text-[#A59ADB] bg-[#CE4DDB]/10'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
@@ -147,7 +147,7 @@ export default function Navigation() {
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.div>
         </MagneticButton>
       </div>
@@ -181,7 +181,7 @@ export default function Navigation() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 + 0.2 }}
-                    className={`text-2xl font-medium transition-colors px-6 py-2 rounded-full ${
+                    className={`text-xl md:text-2xl font-medium transition-colors px-4 md:px-6 py-2 rounded-full ${
                       activeSection === item.href.substring(1)
                         ? 'text-[#A59ADB] bg-[#CE4DDB]/10'
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
